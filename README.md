@@ -24,7 +24,7 @@ Follow these steps to set up kick-rpc for your stream:
 5. Open the `config.json` file and paste the Client ID along with all your other info for the config
 6. In the Discord Developer Portal, navigate to the "Rich Presence" category, then go to "Art Assets" and upload your desired image(s). Please note that it may take a few minutes for the images to appear on the page. You can refresh the page to check if they have been successfully uploaded.
 7. Open a terminal or command prompt and navigate to the directory where you have the kick-rpc files.
-8. You can run the following commands in the terminal:
+8. You can either use the `easy-use.bat` or run the following commands in the terminal:
    - `npm i` | to install the necessary dependencies
    - `npm start` | to launch the script
 
