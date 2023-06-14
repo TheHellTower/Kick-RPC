@@ -2,6 +2,10 @@
 
 **kick-rpc** is a tool that allows streamers to have a rich presence on Discord. By using Discord's rich presence feature, you can display personalized information about your stream to your Discord community.
 
+## Preview
+
+[![Preview](https://i.imgur.com/3nPmIOx.png "Preview")](https://paypal.me/TheHellTower)
+
 ## Requirements
 
 To use kick-rpc, you will need:
