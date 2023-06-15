@@ -1,4 +1,4 @@
-const { clientId, RPC: { details, largeImageKey, largeImageText, smallImageKey, smallImageText, buttons }} = require("./config.json"),
+const { clientId, RPC: { details, largeImageKey, smallImageKey, buttons }} = require("./config.json"),
     http = require('http'),
     RPC = new (require('discord-rpc')).Client({ transport: 'ipc'});
 var intervalId = 0, reconnectionsSuccess = 0, reconnectionsFail = 0;
