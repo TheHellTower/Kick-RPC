@@ -21,9 +21,9 @@ async function setActivity() {
         details,
         startTimestamp: Date.now(),
         largeImageKey,
-        largeImageText,
+        largeImageText: "Follow me for more :)",
         smallImageKey,
-        smallImageText,
+        smallImageText: "kick.com/thehelltower",
         instance: false,
         buttons
     });
