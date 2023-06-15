@@ -1,7 +1,7 @@
 {
-    "clientId": "1118540819310321744",
+    "clientId": "Developer Application Client ID",
     "RPC":{
-        "details": "Wanna see me get my ass kicked on RL ?",
+        "details": "Details",
         "largeImageKey": "kicklogo",
         "largeImageText": "Follow me for more :)",
         "smallImageKey": "kicklogo",
@@ -9,7 +9,11 @@
         "buttons": [
             {
                 "label": "Join Me On Kick",
-                "url": "https://kick.com/thehelltower"
+                "url": "https://kick.com/<username>"
+            },
+            {
+                "label": "Join Me On Discord",
+                "url": "https://discord.gg/<inviteCode>"
             }
         ]
     }

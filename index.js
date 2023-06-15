@@ -1,5 +1,19 @@
-const { clientId, RPC: { details, largeImageKey, largeImageText, smallImageKey, smallImageText, buttons }} = require("./config.json");
-const RPC = new (require('discord-rpc')).Client({ transport: 'ipc'});
+const { clientId, RPC: { details, largeImageKey, largeImageText, smallImageKey, smallImageText, buttons }} = require("./config.json"),
+    http = require('http'),
+    RPC = new (require('discord-rpc')).Client({ transport: 'ipc'});
+var intervalId = 0, reconnectionsSuccess = 0, reconnectionsFail = 0;
+
+function checkInternetConnection() {
+    http.get('http://example.com', (res) => {
+        reconnectionsSuccess++;
+        RPC.emit("ready");
+        clearInterval(intervalId);
+    }).on('error', (err) => {
+        reconnectionsFail++;
+        console.clear();
+        console.log("Waiting to get reconnected...");
+    });
+  }
 
 async function setActivity() {
     if(!RPC) return;
@@ -15,13 +29,18 @@ async function setActivity() {
     });
 };
 
-RPC.on('ready', async () => {
-    console.log(`Script is running now...`); 
+RPC.on('ready', () => {
+    console.clear();
+    console.log(`[RPC] ${RPC.user.username} App connected ! | Re-connections: (Success: ${reconnectionsSuccess} / Fail: ${reconnectionsFail})`); 
     setActivity();
 
     setInterval(() => {
         setActivity();
-    }, 15 * 60 * 1000); 
+    }, 15 * 60 * 1000);
+}).on("close", async () => {
+    intervalId = setInterval(checkInternetConnection, 10 * 1000);
+}).on("error", async () => {
+    intervalId = setInterval(checkInternetConnection, 10 * 1000);
 });
 
 RPC.login({ clientId }).catch(err => console.error(err));
