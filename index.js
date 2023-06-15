@@ -11,7 +11,7 @@ function checkInternetConnection() {
     }).on('error', (err) => {
         reconnectionsFail++;
         console.clear();
-        console.log("Waiting to get reconnected...");
+        console.log("[RPC] Waiting to get reconnected...");
     });
   }
 
