@@ -17,6 +17,8 @@ To use kick-rpc, you will need:
 
 Follow these steps to set up kick-rpc for your stream:
 
+- If you are Lazy to go steps from `1` to `4` just use this Client ID: `1118540819310321744`
+
 1. Go to [discord.com developer page](https://discord.com/developers/applications)
 2. Create a new application
 3. Customize the username of the bot to change the "big" text that appears on Discord
